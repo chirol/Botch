@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'boardgame_matching.apps.Boardgame_matchingConfig',
-    'bootstrap4'
+    'user_auth.apps.UserAuthConfig',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -120,6 +120,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+AUTHENTICATION_BACKENDS = [
+'social_core.backends.twitter.TwitterOAuth',
+'django.contrib.auth.backends.ModelBackend',
+]
+
+SOCIAL_AUTH_TWITTER_KEY = 'dcxV0F0jtX4JO7pmQKUmNhS3G' # Consumer Key (API Key)
+SOCIAL_AUTH_TWITTER_SECRET = 'tlWbgqHBv2KttgxgIStRw5aXJaPCfFLl7Ko970orz3fNyZ5VLK' # Consumer Secret (API Secret)
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/user/top' # リダイレクトURL
 
 try:
     from .local_settings import *
