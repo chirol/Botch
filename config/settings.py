@@ -14,6 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_NAME = os.path.basename(BASE_DIR)
                             
 
 # Quick-start development settings - unsuitable for production
@@ -120,6 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 AUTHENTICATION_BACKENDS = [
 'social_core.backends.twitter.TwitterOAuth',
@@ -129,6 +131,8 @@ AUTHENTICATION_BACKENDS = [
 SOCIAL_AUTH_TWITTER_KEY = 'dcxV0F0jtX4JO7pmQKUmNhS3G' # Consumer Key (API Key)
 SOCIAL_AUTH_TWITTER_SECRET = 'tlWbgqHBv2KttgxgIStRw5aXJaPCfFLl7Ko970orz3fNyZ5VLK' # Consumer Secret (API Secret)
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/user/top' # リダイレクトURL
+
+
 
 try:
     from .local_settings import *
