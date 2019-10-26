@@ -7,3 +7,8 @@ def top_page(request):
     user = UserSocialAuth.objects.get(user_id=request.user.id)
 
     return render(request, 'user_auth/top.html', {'user': user})
+
+"""
+追加予定
+top_pageに未認証なら
+""
