@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user_auth.apps.UserAuthConfig',
     'social_django',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
