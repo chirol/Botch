@@ -1,11 +1,9 @@
 {% extends 'boardgame_matching/base.html' %}
-<html>
-<head>
-    <title>ログイン</title>
-</head>
-<body>
+
+{% block title %}login{% endblock %}
+
+{% block content %}
 <div>
     <button type="button" onclick="location.href='{% url 'social:begin' 'twitter' %}'">Twitterログイン</button>
 </div>
-</body>
-</html>
+{% endblock %}

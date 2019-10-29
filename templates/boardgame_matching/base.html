@@ -1,1 +1,29 @@
+{% load static %}
+<html>
+    <head>
+        <title>
+        {% block title %}BBGM{% endblock %}
+        </title>
+    </head>
+    <body>
+        <nav class ="navbar navbar-dark base-navbar">
+            <span class ="navbar-brand">BBGM</span>
+          
+        {% if user.access_token.screen_name %}
+        {{ user.access_token.screen_name }}
+        {% else %}
+        ログイン
+
+
+        </nav> <!-- navbar -->
+
+
+        {% block content %}
+            <!-- 継承先コンテンツ　-->
+        {% endblock %}
+
+
+    </body>
+</html>
+
 hello heroku
