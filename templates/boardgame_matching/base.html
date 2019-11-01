@@ -13,9 +13,10 @@
         </title>
     </head>
     <body>
-        <nav class ="navbar navbar-dark base-navbar">
+        <nav class ="navbar navbar-dark bg-dark base-navbar">
             <span class ="navbar-brand">BBGM</span>
-          
+        
+        
         {% if user.access_token.screen_name %}
         {{ user.access_token.screen_name }}
         {% else %}
