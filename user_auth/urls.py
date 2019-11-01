@@ -4,6 +4,7 @@ from . import views
 app_name = 'user_auth'
 
 urlpatterns = [
+    path('', views.top_page, name='top'),
     path('top/', views.top_page, name='top'), # リダイレクト
     path('login/', auth_views.LoginView.as_view(),
     {
