@@ -8,3 +8,8 @@ def top_page(request):
 
     return render(request, 'user_auth/top.html', {'user': user})
 
+"""
+def dammy_twitter_login(request):
+
+    return render(request, 'user_auth/top.html', context)
+"""
