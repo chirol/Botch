@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from social_django.models import UserSocialAuth
+from django.views.generic import CreateView, ListView
+from .models import Recruitment
+from .forms import RecruitmentForm
+from django.urls import reverse_lazy
+
 
 @login_required
 def top_page(request):
@@ -8,8 +13,8 @@ def top_page(request):
 
     return render(request, 'user_auth/top.html', {'user': user})
 
-"""
-def dammy_twitter_login(request):
-
-    return render(request, 'user_auth/top.html', context)
-"""
+class RecruitCreateView(CreateView):
+    model = Recruitment
+    form_class = RecruitmentForm
+    template_name = "user_auth/create_form.html"
+    success_url = reverse_lazy('user_auth:top_r')

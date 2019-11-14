@@ -1,17 +1,40 @@
 from django.db import models
 
+
+class Prefecture(models.Model):
+    """
+    遊びたいエリア指定のための県クラス
+    """
+    prefecture = models.CharField(
+        verbose_name='遊びたい地域',
+        max_length=20
+    )
+    
+    def __str__(self):
+        return self.prefecture
+
+
 class Recruitment(models.Model):
     # 募集に必要な情報。
+    username = models.CharField(
+        verbose_name='あなたの名前',
+        max_length=100
+    )
+    # ユーザID。ユーザからは見えない形で保存したい。formで隠せたっけ？
+    userid = models.IntegerField(
+        verbose_name='ID'
+
+    )
     game = models.CharField(
         verbose_name='プレイしたいボードゲームやジャンル',
         max_length=100,
-        default=''
-        blank=False
+        default='',
+        blank=False,
     )
     area = models.ManyToManyField(
         Prefecture,
-        verbose_name='遊びたい地域（県）'
-        blank=False
+        verbose_name='遊びたい地域（県）',
+        blank=False,
     )
     place = models.CharField(
         verbose_name='遊びたいカフェや場所',
@@ -25,13 +48,5 @@ class Recruitment(models.Model):
         max_length='400',
     )
 
-class Prefecture(models.Model):
-    """
-    遊びたいエリア指定のための県クラス
-    """
-    prefecture = models.CharField(
-        verbose_name='遊びたい地域',
-    )
-    
     def __str__(self):
-        return self.prefecture
+        return self.username
