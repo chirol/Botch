@@ -18,3 +18,8 @@ class RecruitCreateView(CreateView):
     form_class = RecruitmentForm
     template_name = "user_auth/create_form.html"
     success_url = reverse_lazy('user_auth:top_r')
+    
+    def get_form_kwargs(self, *args, **kwargs):
+        form_kwargs = super().get_form_kwargs(*args, **kwargs)
+        form_kwargs['initial'] = {'userid': self.request.user.access_token.user_id}
+        return form_kwargs
