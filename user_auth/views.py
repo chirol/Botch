@@ -23,5 +23,5 @@ class RecruitCreateView(CreateView):
     def get_form_kwargs(self, *args, **kwargs):
         form_kwargs = super().get_form_kwargs(*args, **kwargs)
         user = UserSocialAuth.objects.get(user_id=self.request.user.id)
-        form_kwargs['initial'] = {'userid': self.user}
+        form_kwargs['initial'] = {'userid': user}
         return form_kwargs
