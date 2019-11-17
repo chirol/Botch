@@ -13,6 +13,7 @@ def top_page(request):
 
     return render(request, 'user_auth/top.html', {'user': user})
 
+
 class RecruitCreateView(CreateView):
     model = Recruitment
     form_class = RecruitmentForm
@@ -21,5 +22,6 @@ class RecruitCreateView(CreateView):
     
     def get_form_kwargs(self, *args, **kwargs):
         form_kwargs = super().get_form_kwargs(*args, **kwargs)
-        form_kwargs['initial'] = {'userid': self.request.user.access_token.user_id}
+        user = UserSocialAuth.objects.get(user_id=request.user.id)
+        form_kwargs['initial'] = {'userid': user}
         return form_kwargs
