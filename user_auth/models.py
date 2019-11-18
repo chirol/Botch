@@ -18,12 +18,12 @@ class Recruitment(models.Model):
     # 募集に必要な情報。
     username = models.CharField(
         verbose_name='あなたの名前',
-        max_length=100
+        max_length=100,
     )
     # ユーザID。ユーザからは見えない形で保存したい。formで隠せたっけ？
-    userid = models.IntegerField(
-        verbose_name='ID'
-
+    userid = models.CharField(
+        verbose_name='ID',
+        max_length=30,
     )
     game = models.CharField(
         verbose_name='プレイしたいボードゲームやジャンル',
