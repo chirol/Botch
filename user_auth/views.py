@@ -20,6 +20,10 @@ class RecruitCreateView(CreateView):
     template_name = "user_auth/create_form.html"
     success_url = reverse_lazy('user_auth:top_r')
 
+    def get_initial(self):
+        user_id = UserSocialAuth.objects.get(user_id=self.request.user.id)
+        return {'userid': user_id}
+
     """
     def get_form_kwargs(self, *args, **kwargs):
         user_id = UserSocialAuth.objects.get(user_id=self.request.user.id)
@@ -31,11 +35,12 @@ class RecruitCreateView(CreateView):
         }
         form = RecruitmentForm()
     """
-
+    """
     def form_init(self, request):
-        user_id = int(UserSocialAuth.objects.get(user_id=self.request.user.id))
+        user_id = UserSocialAuth.objects.get(user_id=self.request.user.id)
         initial_dict = {
             'userid': user_id
         }
         formset = RecruitmentForm(request.POST or None, initial=initial_dict)
-        return render(request, 'user_auth/create_form.html', {'form': formset})
+        return render(request, 'create_form.html', {'form': formset})
+    """
