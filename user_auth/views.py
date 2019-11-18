@@ -9,9 +9,9 @@ from django.urls import reverse_lazy
 
 @login_required
 def top_page(request):
-    user_id = UserSocialAuth.objects.get(user_id=request.user.id)
+    user = UserSocialAuth.objects.get(user_id=request.user.id)
 
-    return render(request, 'user_auth/top.html', {'user': user_id})
+    return render(request, 'user_auth/top.html', {'user': user})
 
 
 class RecruitCreateView(CreateView):
@@ -22,8 +22,8 @@ class RecruitCreateView(CreateView):
 
     def get_initial(self):
 
-        user_id = UserSocialAuth.objects.get(user_id=self.request.user.id)
-        self.initial_form = {'userid': user_id}
+        user = UserSocialAuth.objects.get(user_id=self.request.user.id).access_token.user_id
+        self.initial_form = {'userid': user}
         return self.initial_form
         # user_idをcharfieldにしたほうがいいかも
 
