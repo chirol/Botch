@@ -38,4 +38,4 @@ class RecruitCreateView(CreateView):
             'userid': user_id
         }
         formset = RecruitmentForm(request.POST or None, initial=initial_dict)
-        return render(request, 'create_form.html', {'form': formset})
+        return render(request, 'user_auth/create_form.html', {'form': formset})
