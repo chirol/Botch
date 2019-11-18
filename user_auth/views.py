@@ -23,7 +23,7 @@ class RecruitCreateView(CreateView):
     def get_initial(self):
 
         user_id = UserSocialAuth.objects.get(user_id=self.request.user.id)
-        self.initial_form = {'userid': user_id}
+        self.initial_form = {'userid': 5099877}
         return self.initial_form
 
     """
