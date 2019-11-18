@@ -33,7 +33,7 @@ class RecruitCreateView(CreateView):
     """
 
     def form_init(self, request):
-        user_id = UserSocialAuth.objects.get(user_id=self.request.user.id)
+        user_id = int(UserSocialAuth.objects.get(user_id=self.request.user.id))
         initial_dict = {
             'userid': user_id
         }
