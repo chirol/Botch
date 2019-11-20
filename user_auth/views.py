@@ -23,7 +23,7 @@ class RecruitCreateView(CreateView):
     def get_initial(self):
 
         user = UserSocialAuth.objects.get(user_id=self.request.user.id)
-        user_id = user.access_token.user_id
+
         self.initial_form = {'userid': user_id}
         return self.initial_form
         # user_idをcharfieldにしたほうがいいかも
