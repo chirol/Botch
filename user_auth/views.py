@@ -22,7 +22,7 @@ class RecruitCreateView(CreateView):
     success_url = reverse_lazy('user_auth:top_r')
 
     def get_initial(self):
-        self.user = UserSocialAuth.objects.get(user_id=request.user.id)
+        self.user = UserSocialAuth.objects.get(user_id=self.request.user.id)
         self.user_api = api.GetUser(screen_name=user)
         self.initial_form = {'userid': self.user_api.id}
         return self.initial_form
