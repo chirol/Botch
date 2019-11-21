@@ -5,6 +5,7 @@ from django.views.generic import CreateView, ListView
 from .models import Recruitment
 from .forms import RecruitmentForm
 from django.urls import reverse_lazy
+import twitter
 
 
 @login_required
@@ -21,10 +22,9 @@ class RecruitCreateView(CreateView):
     success_url = reverse_lazy('user_auth:top_r')
 
     def get_initial(self):
-
-        self.user = UserSocialAuth.objects.get(user_id=self.request.user.id)
-        
-        self.initial_form = {'userid': self.user}
+        self.user = UserSocialAuth.objects.get(user_id=request.user.id)
+        self.user_api = api.GetUser(screen_name=user)
+        self.initial_form = {'userid': self.user_api.id}
         return self.initial_form
         # user_idをcharfieldにしたほうがいいかも
 
