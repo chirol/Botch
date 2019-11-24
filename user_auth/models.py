@@ -20,10 +20,8 @@ class Recruitment(models.Model):
         verbose_name='あなたの名前',
         max_length=100,
     )
-    # ユーザID。ユーザからは見えない形で保存したい。formで隠せたっけ？
-    userid = models.CharField(
+    userid = models.IntegerField(
         verbose_name='ID',
-        max_length=30,
     )
     game = models.CharField(
         verbose_name='プレイしたいボードゲームやジャンル',

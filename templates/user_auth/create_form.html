@@ -5,29 +5,31 @@
 
 <form method="post">
 {% csrf_token %}
-    <div class="form-group">
-        <label>お名前：</label>
-        {{ form.username }}
-    </div>
-    <div>
-        {{ form.userid }}
-    </div>
-    <div>
-        {{ form.game }}
-    </div>
-    <div>
-        {{ form.area }}
-    </div>
-    <div>
-        {{ form.place }}
-    </div>
-    <div>
-        {{ form.date }}
-    </div>
-    <div>
-        {{ form.comment }}
-    </div>
-    <button type="submit" class="btn btn-primary">募集をかける！</button>
+    <div class="container">
+        <div class="form-group">
+            <label>お名前：</label>
+            {{ form.username }}
+        </div>
+        <div>
+            {{ form.userid }}
+        </div>
+        <div>
+            {{ form.game }}
+        </div>
+        <div>
+            {{ form.area }}
+        </div>
+        <div>
+            {{ form.place }}
+        </div>
+        <div>
+            {{ form.date }}
+        </div>
+        <div>
+            {{ form.comment }}
+        </div>
+        <button type="submit" class="btn btn-primary">募集をかける！</button>
+    </div><!--container-->
     
 </form>
 

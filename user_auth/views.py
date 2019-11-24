@@ -12,7 +12,6 @@ from django.conf import settings
 @login_required
 def top_page(request):
     user = UserSocialAuth.objects.get(user_id=request.user.id)
-
     return render(request, 'user_auth/top.html', {'user': user})
 
 
@@ -29,13 +28,10 @@ class RecruitCreateView(CreateView):
             access_token_key=settings.SOCIAL_AUTH_TWITTER_ACCESS_TOKEN,
             access_token_secret=settings.SOCIAL_AUTH_TWITTER_ACCESS_TOKEN_SECRET,
         )
-        self.user = UserSocialAuth.objects.get(user_id=self.request.user.id)
-        self.user_info = self.twitter_api.GetUser(screen_name=self.user)
-
-
-        self.initial_form = {'userid': self.user_info.id}
+        self.user = UserSocialAuth.objects.get(user_id=self.request.user.id) #ログインユーザのtwitter表示名
+        self.user_info = self.twitter_api.GetUser(screen_name=self.user) #表示名からtwitter情報取得
+        self.initial_form = {'userid': self.user_info.id} #twitter情報からユーザid（一意)をフォームの初期値に
         return self.initial_form
-        # user_idをcharfieldにしたほうがいいかも
 
     """
     def get_form_kwargs(self, *args, **kwargs):
