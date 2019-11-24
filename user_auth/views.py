@@ -6,6 +6,7 @@ from .models import Recruitment
 from .forms import RecruitmentForm
 from django.urls import reverse_lazy
 import twitter
+from django.conf import settings
 
 
 @login_required
@@ -22,9 +23,17 @@ class RecruitCreateView(CreateView):
     success_url = reverse_lazy('user_auth:top_r')
 
     def get_initial(self):
+        self.twitter_api = twitter.Api(
+            consumer_key=settings.SOCIAL_AUTH_TWITTER_KEY,
+            consumer_secret=settings.SOCIAL_AUTH_TWITTER_SECRET,
+            access_token_key=settings.SOCIAL_AUTH_TWITTER_ACCESS_TOKEN,
+            access_token_secret=settings.SOCIAL_AUTH_TWITTER_ACCESS_TOKEN_SECRET,
+        )
         self.user = UserSocialAuth.objects.get(user_id=self.request.user.id)
-        self.user_api = self.api.GetUser(screen_name=user)
-        self.initial_form = {'userid': self.user_api.id}
+        self.user_info = self.twitter_api.GetUser(screen_name=self.user)
+
+
+        self.initial_form = {'userid': self.user_info.id}
         return self.initial_form
         # user_idをcharfieldにしたほうがいいかも
 
