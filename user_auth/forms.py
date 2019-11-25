@@ -10,5 +10,5 @@ class RecruitmentForm(forms.ModelForm):
 
     class Meta:
         model = Recruitment
-        fields = ('username', 'userid', 'game', 'area', 'place',
+        fields = ('username', 'userid', 'game', 'number', 'area', 'place',
                   'date', 'comment')

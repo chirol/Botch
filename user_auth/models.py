@@ -14,12 +14,25 @@ class Prefecture(models.Model):
         return self.prefecture
 
 
+class Participants(models.Model):
+    """
+    参加者のリスト
+    """
+    participant = models.IntegerField(
+        verbose_name='参加者のtwitterID'
+    )
+
+    def __str__(self):
+        return self.participant
+
+
 class Recruitment(models.Model):
     # 募集に必要な情報。
     username = models.CharField(
         verbose_name='あなたの名前',
         max_length=100,
     )
+    # 隠しフィールド
     userid = models.IntegerField(
         verbose_name='ID',
     )
@@ -28,6 +41,12 @@ class Recruitment(models.Model):
         max_length=100,
         default='',
         blank=False,
+    )
+    number = models.IntegerField(
+        verbose_name='募集人数'
+    )
+    participant = models.ManyToManyField(
+        Participants
     )
     area = models.ManyToManyField(
         Prefecture,

@@ -3,6 +3,9 @@
 
 {% block content %}
 
+<!--'username', 'userid', 'game', 'number', 'area', 'place',
+                  'date', 'comment')-->
+
 <form method="post">
 {% csrf_token %}
     <div class="container">
@@ -11,21 +14,26 @@
             {{ form.username }}
         </div>
         <div>
-            {{ form.userid }}
+            {{ form.userid }}<!--隠しフィールド-->
         </div>
         <div>
+            <label>遊びたいゲームやジャンル</label>
             {{ form.game }}
         </div>
         <div>
+            <label>遊びたい地域</label>
             {{ form.area }}
         </div>
         <div>
+            <label>カフェや場所</label>
             {{ form.place }}
         </div>
         <div>
+            <label>希望日時</label>
             {{ form.date }}
         </div>
         <div>
+            <label>コメント</label>
             {{ form.comment }}
         </div>
         <button type="submit" class="btn btn-primary">募集をかける！</button>
