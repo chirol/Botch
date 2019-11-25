@@ -15,13 +15,13 @@
     <body>
         <nav class ="navbar navbar-dark bg-dark base-navbar">
             <span class ="navbar-brand">
-            <a href={% url 'social:begin' 'twitter' %}>BBGM</a>
+            <a class='navbar-brand' href={% url 'user_auth:top' %}>BBGM</a>
             </span>
         
         {% if user.access_token.screen_name %}
         {{ user.access_token.screen_name }}
         {% else %}
-        ログイン
+        <a href={% url 'social:begin' 'twitter' %}>ログイン</a>
         {% endif %}
 
 
