@@ -14,7 +14,9 @@
     </head>
     <body>
         <nav class ="navbar navbar-dark bg-dark base-navbar">
-            <span class ="navbar-brand">BBGM</span>
+            <span class ="navbar-brand">
+            <a href={% url 'social:begin' 'twitter' %}>BBGM</a>
+            </span>
         
         {% if user.access_token.screen_name %}
         {{ user.access_token.screen_name }}
