@@ -32,24 +32,3 @@ class RecruitCreateView(CreateView):
         self.user_info = self.twitter_api.GetUser(screen_name=self.user) #表示名からtwitter情報取得
         self.initial_form = {'userid': self.user_info.id} #twitter情報からユーザid（一意)をフォームの初期値に
         return self.initial_form
-
-    """
-    def get_form_kwargs(self, *args, **kwargs):
-        user_id = UserSocialAuth.objects.get(user_id=self.request.user.id)
-        form_kwargs = super().get_form_kwargs(*args, **kwargs)
-        form_kwargs['initial'] = {'userid': user}
-        return form_kwargs
-        initial_dict = {
-            'userid' = user_id
-        }
-        form = RecruitmentForm()
-    """
-    """
-    def form_init(self, request):
-        user_id = UserSocialAuth.objects.get(user_id=self.request.user.id)
-        initial_dict = {
-            'userid': user_id
-        }
-        formset = RecruitmentForm(request.POST or None, initial=initial_dict)
-        return render(request, 'create_form.html', {'form': formset})
-    """
