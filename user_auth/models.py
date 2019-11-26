@@ -43,7 +43,8 @@ class Recruitment(models.Model):
         blank=False,
     )
     number = models.IntegerField(
-        verbose_name='募集人数'
+        verbose_name='募集人数',
+        default=2,
     )
     participant = models.ManyToManyField(
         Participants

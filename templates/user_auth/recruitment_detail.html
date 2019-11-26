@@ -1,0 +1,37 @@
+{% extends 'boardgame_matching/base.html' %}
+
+
+{% block content %}
+
+<!--'username', 'userid', 'game', 'number', 'area', 'place',
+                  'date', 'comment')-->
+<div class='container'>
+    <div>
+        {{ Recruitment.username }}
+    </div>
+
+    <div>
+        {{ Recruitment.game }}
+    </div>
+
+    <div>
+        {{ Recruitment.area }}
+    </div>
+
+    <div>
+        {{Recruitment.place}}
+    </div>
+
+    <div>
+        {{Recruitment.date}}
+    </div>
+
+    <div>
+        {{ Recruitment.number }}
+    </div>
+    
+    <div>
+        {{ Recruitment.comment }}
+    </div>
+</div>
+{% endblock %}

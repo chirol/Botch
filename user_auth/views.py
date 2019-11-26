@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from social_django.models import UserSocialAuth
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, UpdateView, DetailView
 from .models import Recruitment
 from .forms import RecruitmentForm
 from django.urls import reverse_lazy
@@ -32,3 +32,35 @@ class RecruitCreateView(CreateView):
         self.user_info = self.twitter_api.GetUser(screen_name=self.user) #表示名からtwitter情報取得
         self.initial_form = {'userid': self.user_info.id} #twitter情報からユーザid（一意)をフォームの初期値に
         return self.initial_form
+
+
+class RecruitmentDatailView(DetailView):
+    """
+    募集の詳細ページ
+    """
+    model = Recruitment
+    template_name = "user_auth/recruitment_detail.html"
+
+
+class RecruitmentUpdateView(UpdateView):
+    """
+    募集の更新ページ
+    """
+    model = Recruitment
+    template_name = "user_auth/recruitment_update.html"
+
+
+class RecruitmentListView(ListView):
+    """
+    募集をリスト表示する
+    """
+    model = Recruitment
+    template_name = "user_auth/recruitment_list.html"
+
+"""
+class RecruitmentDeleteView(DeleteView):
+    model = Recruitment
+    # 削除はまずはなしの方針で、要望があれば追加
+"""
+
+    
