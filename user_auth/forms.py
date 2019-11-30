@@ -12,3 +12,6 @@ class RecruitmentForm(forms.ModelForm):
         model = Recruitment
         fields = ('username', 'userid', 'game', 'number', 'area', 'place',
                   'date', 'comment')
+        widgets = {
+            'date': forms.SelectDateWidget
+        }
