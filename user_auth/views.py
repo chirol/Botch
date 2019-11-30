@@ -40,7 +40,12 @@ class RecruitmentDatailView(DetailView):
     """
     model = Recruitment
     template_name = "user_auth/recruitment_detail.html"
+    
+    def screen_name(self, request):
+        self.user = UserSocialAuth.objects.get(user_id=self.request.user.id)
+        return render(self.request, 'user_auth/recruitment_detail.html', {'user': self.user})
 
+    
 
 class RecruitmentUpdateView(UpdateView):
     """
@@ -55,7 +60,7 @@ class RecruitmentListView(ListView):
     募集をリスト表示する
     """
     model = Recruitment
-    template_name = "user_auth/recruitment_list.html"
+    template_name = "user_auth/top.html"
 
 """
 class RecruitmentDeleteView(DeleteView):
