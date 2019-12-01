@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-    
+
 db_from_env = dj_database_url.config()
 
 DATABASES = {
@@ -141,9 +141,16 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 AUTHENTICATION_BACKENDS = [
-'social_core.backends.twitter.TwitterOAuth',
-'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.twitter.TwitterOAuth',
+    'django.contrib.auth.backends.ModelBackend',
 ]
+SOCIAL_AUTH_PIPELINE = (
+    'social_core.pipeline.social_auth.social_details',
+    'social_core.pipeline.social_auth.social_user',
+    'social_core.pipeline.user.get_username',
+)
+
+SOCIAL_AUTH_FIELDS_STORED_IN_SESSION = ['session_user',]
 
 SOCIAL_AUTH_TWITTER_KEY = 'dcxV0F0jtX4JO7pmQKUmNhS3G' # Consumer Key (API Key)
 SOCIAL_AUTH_TWITTER_SECRET = 'tlWbgqHBv2KttgxgIStRw5aXJaPCfFLl7Ko970orz3fNyZ5VLK' # Consumer Secret (API Secret)

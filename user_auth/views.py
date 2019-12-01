@@ -15,6 +15,11 @@ def top_page(request):
     return render(request, 'user_auth/top.html', {'user': user})
 
 
+def auth_session(strategy, backend, request, details, *args, **kwargs):
+    user_session = strategy.session.get('session_user', None)
+    user.save()
+
+
 class RecruitCreateView(CreateView):
     model = Recruitment
     form_class = RecruitmentForm
