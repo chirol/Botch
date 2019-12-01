@@ -15,10 +15,19 @@ def top_page(request):
     return render(request, 'user_auth/top.html', {'user': user})
 
 
+def get_user(request):
+    user_id = request.session.get('user_id')
+    if user_id:
+        user = DBSession.query(User).filter(User.id == user_id)
+    else:
+        user = None
+    return user
+
+"""
 def auth_session(strategy, backend, request, details, *args, **kwargs):
     user_session = strategy.session.get('session_user', None)
     user.save()
-
+"""
 
 class RecruitCreateView(CreateView):
     model = Recruitment
