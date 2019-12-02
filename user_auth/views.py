@@ -7,6 +7,9 @@ from .forms import RecruitmentForm
 from django.urls import reverse_lazy
 import twitter
 from django.conf import settings
+from django.contrib.auth import login
+
+from social_django.utils import psa
 
 
 @login_required
@@ -14,7 +17,7 @@ def top_page(request):
     user = UserSocialAuth.objects.get(user_id=request.user.id)
     return render(request, 'user_auth/top.html', {'user': user})
 
-
+"""
 def get_user(request):
     user_id = request.session.get('user_id')
     if user_id:
@@ -22,12 +25,20 @@ def get_user(request):
     else:
         user = None
     return user
+"""
+@psa('social:complete')
+def register_by_access_token(request, backend):
+    # This view expects an access_token GET parameter, if it's needed,
+    # request.backend and request.strategy will be loaded with the current
+    # backend and strategy.
+    token = request.GET.get('access_token')
+    user = request.backend.do_auth(token)
+    if user:
+        login(request, user)
+        return 'OK'
+    else:
+        return 'ERROR'
 
-"""
-def auth_session(strategy, backend, request, details, *args, **kwargs):
-    user_session = strategy.session.get('session_user', None)
-    user.save()
-"""
 
 class RecruitCreateView(CreateView):
     model = Recruitment
