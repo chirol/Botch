@@ -18,8 +18,15 @@
             <a class='navbar-brand' href={% url 'user_auth:top' %}>BBGM</a>
             </span>
         
-        {% if user.access_token.screen_name %}
+
+        <!--        {% if user.access_token.screen_name %}
         {{ user.access_token.screen_name }}
+        <a href="{% url 'user_auth:logout' %}" >ログアウト</button></a>
+        {% else %}
+        <a href={% url 'social:begin' 'twitter' %}>ログイン</a>
+        {% endif %}-->
+        {% if user %}
+        {{ user }}
         <a href="{% url 'user_auth:logout' %}" >ログアウト</button></a>
         {% else %}
         <a href={% url 'social:begin' 'twitter' %}>ログイン</a>
