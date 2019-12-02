@@ -25,7 +25,12 @@
         {% else %}
         <a href={% url 'social:begin' 'twitter' %}>ログイン</a>
         {% endif %}-->
-        {% if user.is_authenticated %}
+        {% if user %}
+            {% if user.id == None %}
+                
+            {% else %}
+                {{user}}
+            {% endif %}
         {{ user }}
         <a href="{% url 'user_auth:logout' %}" >ログアウト</button></a>
         {% else %}
