@@ -25,17 +25,14 @@
         {% else %}
         <a href={% url 'social:begin' 'twitter' %}>ログイン</a>
         {% endif %}-->
-        {% if user %}
+
             {% if user.id == None %}
-                
+                <a href={% url 'social:begin' 'twitter' %}>ログイン</a>
             {% else %}
                 {{user}}
+                <a href="{% url 'user_auth:logout' %}" >ログアウト</button></a>
             {% endif %}
-        {{ user }}
-        <a href="{% url 'user_auth:logout' %}" >ログアウト</button></a>
-        {% else %}
-        <a href={% url 'social:begin' 'twitter' %}>ログイン</a>
-        {% endif %}
+
 
 
         </nav> <!-- navbar -->
