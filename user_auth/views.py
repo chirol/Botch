@@ -26,18 +26,6 @@ def get_user(request):
         user = None
     return user
 """
-@psa('social:complete')
-def register_by_access_token(request, backend):
-    # This view expects an access_token GET parameter, if it's needed,
-    # request.backend and request.strategy will be loaded with the current
-    # backend and strategy.
-    token = request.GET.get('access_token')
-    user = request.backend.do_auth(token)
-    if user:
-        login(request, user)
-        return 'OK'
-    else:
-        return 'ERROR'
 
 
 class RecruitCreateView(CreateView):
@@ -57,6 +45,10 @@ class RecruitCreateView(CreateView):
         self.user_info = self.twitter_api.GetUser(screen_name=self.user) #表示名からtwitter情報取得
         self.initial_form = {'username': self.user, 'userid': self.user_info.id} #twitter情報からユーザid（一意)をフォームの初期値に
         return self.initial_form
+
+    def user_auth(request):
+        self.user = UserSocialAuth.objects.get(user_id=self.request.user.id)
+        return render(request, 'user_auth/create_form.html', {'user': user})
 
 
 class RecruitmentDatailView(DetailView):
