@@ -10,6 +10,7 @@
 {% csrf_token %}
     <div class="container">
         <div class="form-group">
+        {{ user.access_token.user_id }}
             <label>お名前：</label>
             {{ form.username }}
         </div>
