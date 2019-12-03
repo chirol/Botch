@@ -62,7 +62,7 @@ class RecruitmentUpdateView(UpdateView):
 
     def user_auth(request):
         self.user = UserSocialAuth.objects.get(user_id=self.request.user.id)
-        return render(request, 'user_auth/create_form.html', {'user': self.user})
+        return render(request, 'user_auth/create_form.html', {'user': self.user, 'user.id': self.user.id})
 
 
 
