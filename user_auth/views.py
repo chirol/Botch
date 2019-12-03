@@ -47,12 +47,11 @@ class RecruitmentDatailView(DetailView):
     """
     model = Recruitment
     template_name = "user_auth/recruitment_detail.html"
-    
-    def screen_name(self, request):
-        self.user = UserSocialAuth.objects.get(user_id=self.request.user.id)
-        return render(self.request, 'user_auth/recruitment_detail.html', {'user': self.user})
 
-    
+    def user_auth(request):
+        self.user = UserSocialAuth.objects.get(user_id=self.request.user.id)
+        return render(request, 'user_auth/create_form.html', {'user': self.user})
+
 
 class RecruitmentUpdateView(UpdateView):
     """
@@ -61,6 +60,11 @@ class RecruitmentUpdateView(UpdateView):
     model = Recruitment
     template_name = "user_auth/recruitment_update.html"
 
+    def user_auth(request):
+        self.user = UserSocialAuth.objects.get(user_id=self.request.user.id)
+        return render(request, 'user_auth/create_form.html', {'user': self.user})
+
+
 
 class RecruitmentListView(ListView):
     """
@@ -68,6 +72,10 @@ class RecruitmentListView(ListView):
     """
     model = Recruitment
     template_name = "user_auth/top.html"
+
+    def user_auth(request):
+        self.user = UserSocialAuth.objects.get(user_id=self.request.user.id)
+        return render(request, 'user_auth/create_form.html', {'user': self.user})
 
 """
 class RecruitmentDeleteView(DeleteView):
