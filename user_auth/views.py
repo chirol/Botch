@@ -17,16 +17,6 @@ def top_page(request):
     user = UserSocialAuth.objects.get(user_id=request.user.id)
     return render(request, 'user_auth/top.html', {'user': user})
 
-"""
-def get_user(request):
-    user_id = request.session.get('user_id')
-    if user_id:
-        user = DBSession.query(User).filter(User.id == user_id)
-    else:
-        user = None
-    return user
-"""
-
 
 class RecruitCreateView(CreateView):
     model = Recruitment
@@ -48,7 +38,7 @@ class RecruitCreateView(CreateView):
 
     def user_auth(request):
         self.user = UserSocialAuth.objects.get(user_id=self.request.user.id)
-        return render(request, 'user_auth/create_form.html', {'user': user})
+        return render(request, 'user_auth/create_form.html', {'user': self.user})
 
 
 class RecruitmentDatailView(DetailView):
