@@ -20,6 +20,9 @@
         {{user}}</br>
         id</br>
         {{ user.access_token.user_id }}
+        {% for i in user%}
+            {{ i }
+        {% endfor %}}
 
     </div>
 </div>
