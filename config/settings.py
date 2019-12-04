@@ -151,7 +151,7 @@ SOCIAL_AUTH_PIPELINE = (
 
     'social_core.pipeline.social_auth.social_user',
     'social_core.pipeline.user.get_username',
-    
+
     'social_core.pipeline.social_auth.social_user',
     'social_core.pipeline.social_auth.associate_user',
     'social_core.pipeline.social_auth.load_extra_data',
@@ -159,6 +159,7 @@ SOCIAL_AUTH_PIPELINE = (
 )
 
 SOCIAL_AUTH_FIELDS_STORED_IN_SESSION = ['session_user']
+SOCIAL_AUTH_SESSION_EXPIRATION = False 
 
 SOCIAL_AUTH_TWITTER_KEY = 'dcxV0F0jtX4JO7pmQKUmNhS3G' # Consumer Key (API Key)
 SOCIAL_AUTH_TWITTER_SECRET = 'tlWbgqHBv2KttgxgIStRw5aXJaPCfFLl7Ko970orz3fNyZ5VLK' # Consumer Secret (API Secret)
