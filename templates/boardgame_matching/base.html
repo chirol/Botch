@@ -30,7 +30,7 @@
                 <a href={% url 'social:begin' 'twitter' %}>ログイン</a>
             {% else %}
                 {{user}}
-                {{ user.access_token.user_id }}
+                {{ user.user_id }}
                 <a href="{% url 'user_auth:logout' %}" >ログアウト</button></a>
             {% endif %}
 
