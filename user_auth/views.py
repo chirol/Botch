@@ -23,7 +23,8 @@ class RecruitCreateView(CreateView):
     form_class = RecruitmentForm
     template_name = "user_auth/create_form.html"
     success_url = reverse_lazy('user_auth:top_r')
-    def __init__(self):
+    
+    def __init__(self, request):
         self.user = UserSocialAuth.objects.get(user_id=self.request.user.id)
      
     def user_auth(request):
