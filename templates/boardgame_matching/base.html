@@ -26,16 +26,14 @@
         <a href={% url 'social:begin' 'twitter' %}>ログイン</a>
         {% endif %}-->
 
-            {% if user.uid == None %}
+            {% if user.id == None %}
                 <a href={% url 'social:begin' 'twitter' %}>ログイン</a>
             {% else %}
                 {{user}}
-                {{ user.user_id }}
-                koko{{ user.access_token.screen_name }}koko
+                {{ user.id }}
                 <a href="{% url 'user_auth:logout' %}" >ログアウト</button></a>
             {% endif %}
-            {{user}}
-                {{ user.id }}
+
 
 
         </nav> <!-- navbar -->

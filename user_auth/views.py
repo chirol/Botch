@@ -23,7 +23,16 @@ class RecruitCreateView(CreateView):
     form_class = RecruitmentForm
     template_name = "user_auth/create_form.html"
     success_url = reverse_lazy('user_auth:top_r')
+    user = UserSocialAuth.objects.get(user_id=request.user.id)
 
+    def user_auth(request):
+        return render(request, 'user_auth/create_form.html', {'user': user})
+
+    def get_initial(self):
+        self.initial_form = {'username': self.user, 'userid': self.user.id} #twitter情報からユーザid（一意)をフォームの初期値に
+        return self.initial_form
+
+"""
     def get_initial(self):
         self.twitter_api = twitter.Api(
             consumer_key=settings.SOCIAL_AUTH_TWITTER_KEY,
@@ -35,10 +44,8 @@ class RecruitCreateView(CreateView):
         self.user_info = self.twitter_api.GetUser(screen_name=self.user) #表示名からtwitter情報取得
         self.initial_form = {'username': self.user, 'userid': self.user_info.id} #twitter情報からユーザid（一意)をフォームの初期値に
         return self.initial_form
+"""
 
-    def user_auth(request):
-        self.user = UserSocialAuth.objects.get(user_id=self.request.user.id)
-        return render(request, 'user_auth/create_form.html', {'user': self.user})
 
 
 class RecruitmentDatailView(DetailView):
