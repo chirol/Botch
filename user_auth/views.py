@@ -79,7 +79,6 @@ class RecruitmentListView(ListView):
     """
     model = Recruitment
     template_name = "user_auth/top.html"
-    context_object_name = 'recruitment'
 
     def user_auth(request):
         self.user = UserSocialAuth.objects.get(user_id=self.request.user.id)
