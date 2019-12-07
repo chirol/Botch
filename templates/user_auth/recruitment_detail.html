@@ -15,7 +15,9 @@
     </div>
 
     <div>
-        {{ recruitment.area }}
+        {% for prefecture in recruitment.area %}
+            {{ prefecture }}
+        {% endfor %}
     </div>
 
     <div>
