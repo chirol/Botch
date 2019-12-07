@@ -18,34 +18,35 @@
 
 
 <div class='container'>
+{% for list in recruitment %}
     <div>
-        名前：{{ recruitment.username }}
+        名前：{{ list.username }}
     </div>
 
     <div>
-        {{ recruitment.game }}
+        {{ list.game }}
     </div>
 
     <div>
-        {% for prefecture in recruitment.area.all %}
+        {% for prefecture in list.area.all %}
             {{ prefecture }}
         {% endfor %}
     </div>
 
     <div>
-        {{ recruitment.place }}
+        {{ list.place }}
     </div>
 
     <div>
-        {{ recruitment.date }}
+        {{ list.date }}
     </div>
 
     <div>
-        {{ recruitment.number }}
+        {{ list.number }}
     </div>
     
     <div>
-        {{ recruitment.comment }}
+        {{ list.comment }}
     </div>
 </div>
 
