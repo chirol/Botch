@@ -34,7 +34,7 @@ class Recruitment(models.Model):
     )
     # 隠しフィールド
     userid = models.IntegerField(
-        verbose_name='ID',
+        verbose_name='募集投稿者のID',
     )
     game = models.CharField(
         verbose_name='プレイしたいボードゲームやジャンル',

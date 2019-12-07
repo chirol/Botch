@@ -16,10 +16,38 @@
         <p><b>OAuthToken</b>:{{ user.access_token.oauth_token }}</p>
         <p><b>AuthTime</b>:{{ user.extra_data.auth_time }}</p>
 
-        ユーザー</br>
-        {{user}}</br>
-        id</br>
-        {{ user.user_id }}
+
+<div class='container'>
+    <div>
+        名前：{{ recruitment.username }}
+    </div>
+
+    <div>
+        {{ recruitment.game }}
+    </div>
+
+    <div>
+        {% for prefecture in recruitment.area.all %}
+            {{ prefecture }}
+        {% endfor %}
+    </div>
+
+    <div>
+        {{ recruitment.place }}
+    </div>
+
+    <div>
+        {{ recruitment.date }}
+    </div>
+
+    <div>
+        {{ recruitment.number }}
+    </div>
+    
+    <div>
+        {{ recruitment.comment }}
+    </div>
+</div>
 
 
     </div>
