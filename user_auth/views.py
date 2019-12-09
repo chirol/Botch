@@ -11,12 +11,12 @@ from django.contrib.auth import login
 
 from social_django.utils import psa
 
-"""
+
 @login_required
 def top_page(request):
     user = UserSocialAuth.objects.get(user_id=request.user.id)
     return render(request, 'user_auth/top.html', {'user': user})
-"""
+
 
 class RecruitCreateView(CreateView):
     model = Recruitment
