@@ -11,12 +11,12 @@ from django.contrib.auth import login
 
 from social_django.utils import psa
 
-
+"""
 @login_required
 def top_page(request):
     user = UserSocialAuth.objects.get(user_id=request.user.id)
     return render(request, 'user_auth/top.html', {'user': user})
-
+"""
 
 class RecruitCreateView(CreateView):
     model = Recruitment
@@ -83,7 +83,7 @@ class RecruitmentListView(ListView):
 
     def user_auth(request):
         self.user = UserSocialAuth.objects.get(user_id=self.request.user.id)
-        return render(request, 'user_auth/create_form.html', {'user': self.user})
+        return render(request, 'user_auth/top.html', {'user': self.user})
 
 """
 class RecruitmentDeleteView(DeleteView):
