@@ -14,9 +14,9 @@
         <p><b>OAuthToken</b>:{{ user.access_token.oauth_token }}</p>
         <p><b>AuthTime</b>:{{ user.extra_data.auth_time }}</p>
 
-{% for list in object_list %}
+
 <div class="container">
-    
+ {% for list in object_list %}   
         <div class="card col-12 col-lg-6">
     
         <div>
@@ -49,9 +49,9 @@
             {{ list.comment }}
         </div>
         </div><!--card-->
-    
+   {% endfor %} 
 </div><!--list_container-->
-{% endfor %}
+
 
     </div>
 </div>
