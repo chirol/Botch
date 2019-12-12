@@ -14,11 +14,11 @@
         <p><b>OAuthToken</b>:{{ user.access_token.oauth_token }}</p>
         <p><b>AuthTime</b>:{{ user.extra_data.auth_time }}</p>
 
-
+{% for list in object_list %}
 <div class="container">
     <div class="row">
         <div class="card col-12 col-lg-6">
-    {% for list in object_list %}
+    
         <div>
             名前：{{ list.username }}
         </div>
@@ -48,11 +48,10 @@
         <div>
             {{ list.comment }}
         </div>
-    {% endfor %}
         </div><!--card-->
     </div><!--row-->
 </div><!--list_container-->
-
+{% endfor %}
 
     </div>
 </div>
