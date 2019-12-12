@@ -5,51 +5,53 @@
 
 {% block content %}
 
-    <div>
-        <a href="{% url 'user_auth:logout' %}" >ログアウト</button></a>
-    </div>
+
 <div>
     <div>
-      <p><b>ScreenName</b>:{{ user.access_token.screen_name }}</p>
+        <p><b>ScreenName</b>:{{ user.access_token.screen_name }}</p>
         <p><b>UserId</b>:{{ user.access_token.user_id }}</p>
         <p><b>OAuthTokenSecret</b>:{{ user.access_token.oauth_token_secret }}</p>
         <p><b>OAuthToken</b>:{{ user.access_token.oauth_token }}</p>
         <p><b>AuthTime</b>:{{ user.extra_data.auth_time }}</p>
 
 
-<div class='container'>
-{% for list in object_list %}
-    <div>
-        名前：{{ list.username }}
-    </div>
+<div class="container">
+    <div class="row">
+        <div class="card col-12 col-lg-6">
+    {% for list in object_list %}
+        <div>
+            名前：{{ list.username }}
+        </div>
 
-    <div>
-        {{ list.game }}
-    </div>
+        <div>
+            {{ list.game }}
+        </div>
 
-    <div>
-        {% for prefecture in list.area.all %}
-            {{ prefecture }}
-        {% endfor %}
-    </div>
+        <div>
+            {% for prefecture in list.area.all %}
+                {{ prefecture }}
+            {% endfor %}
+        </div>
 
-    <div>
-        {{ list.place }}
-    </div>
+        <div>
+            {{ list.place }}
+        </div>
 
-    <div>
-        {{ list.date }}
-    </div>
+        <div>
+            {{ list.date }}
+        </div>
 
-    <div>
-        {{ list.number }}
-    </div>
-    
-    <div>
-        {{ list.comment }}
-    </div>
-{% endfor %}
-</div>
+        <div>
+            {{ list.number }}
+        </div>
+        
+        <div>
+            {{ list.comment }}
+        </div>
+    {% endfor %}
+        </div><!--card-->
+    </div><!--row-->
+</div><!--list_container-->
 
 
     </div>
