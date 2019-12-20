@@ -15,7 +15,7 @@ from social_django.utils import psa
 @login_required
 def top_page(request):
     user = UserSocialAuth.objects.get(user_id=request.user.id)
-    return render(request, 'user_auth/top.html', {'user': user})
+    return render(request, 'user_auth/base.html', {'user': user})
 
 
 class RecruitCreateView(CreateView):
@@ -91,4 +91,6 @@ class RecruitmentDeleteView(DeleteView):
     # 削除はまずはなしの方針で、要望があれば追加
 """
 
-    
+
+def dev_top(request):
+    return render(request, 'user_auth/dev_top.html')
