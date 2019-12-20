@@ -15,7 +15,7 @@ from social_django.utils import psa
 @login_required
 def top_page(request):
     user = UserSocialAuth.objects.get(user_id=request.user.id)
-    return render(request, 'user_auth/base.html', {'user': user})
+    return render(request, 'boardgame_matching/base.html', {'user': user})
 
 
 class RecruitCreateView(CreateView):
