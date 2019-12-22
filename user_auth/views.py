@@ -69,6 +69,7 @@ class RecruitmentUpdateView(UpdateView):
     model = Recruitment
     template_name = "user_auth/recruitment_update.html"
     form_class = RecruitmentForm
+    success_url = reverse_lazy('user_auth:top_r')
 
     def user_auth(request):
         self.user = UserSocialAuth.objects.get(user_id=self.request.user.id)
