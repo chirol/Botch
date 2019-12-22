@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="post">
+{% csrf_token %}
+    <div class="container">
+    
+        <div class="form-group">
+            <label>お名前：</label>
+            {{ form.username }}
+        </div>
+        <div>
+            {{ form.userid }}<!--隠しフィールド-->
+        </div>
+        <div>
+            <label>遊びたいゲームやジャンル</label>
+            {{ form.game }}
+        </div>
+        <div>
+            <label>遊びたい地域</label>
+            {{ form.area }}
+        </div>
+        <div>
+            <label>カフェや場所</label>
+            {{ form.place }}
+        </div>
+        <div>
+            <label>希望日時</label>
+            {{ form.date }}
+        </div>
+        <div>
+            <label>参加人数</label>
+            {{ form.number }}
+        <div>
+            <label>コメント</label>
+            {{ form.comment }}
+        </div>
+        <button type="submit" class="btn btn-primary">募集をかける！</button>
+    </div><!--container-->
+    
+</form>
+
+{% endblock %}

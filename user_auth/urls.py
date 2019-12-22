@@ -10,6 +10,7 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('recruitment/', views.RecruitCreateView.as_view(), name='recruitment'),
     path('<int:pk>/', views.RecruitmentDatailView.as_view(), name='detail'),
+    path('<int:pk>/update', views.RecruitmentUpdateView.as_view(), name='update')
     path('dev_top/', views.dev_top, name='dev_top'),
     
 ]

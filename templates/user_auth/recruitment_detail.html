@@ -35,5 +35,8 @@
     <div>
         {{ recruitment.comment }}
     </div>
+    <div>
+        <a href="{% url 'user_auth:update' recruitment.pk %}" class="btn">修正する！</a>
+    </div>
 </div>
 {% endblock %}
