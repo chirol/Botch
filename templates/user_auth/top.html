@@ -6,55 +6,49 @@
 {% block content %}
 
 
-<div>
-    <div>
-        <p><b>ScreenName</b>:{{ user.access_token.screen_name }}</p>
-        <p><b>UserId</b>:{{ user.access_token.user_id }}</p>
-        <p><b>OAuthTokenSecret</b>:{{ user.access_token.oauth_token_secret }}</p>
-        <p><b>OAuthToken</b>:{{ user.access_token.oauth_token }}</p>
-        <p><b>AuthTime</b>:{{ user.extra_data.auth_time }}</p>
-
 
 <div class="container">
-<div class="row"><!--mainrow-->
- {% for list in object_list %}   
+    <div class="row"><!--mainrow-->
+        {% for list in object_list %}   
         <div class="col-12 col-lg-6">
         <a href="{% url 'user_auth:detail' list.pk %}" class="card">
-        <div class="row">
-            <div class="col-4">
-                {% for prefecture in list.area.all %}
-                    {{ prefecture }}
-                {% endfor %}
-                <div>
-                    {{ list.date }}
-                </div>
-            </div>
-
             <div class="row">
-                <div class="col-8">
+                <div class="col-lg-4">
+                    {% for prefecture in list.area.all %}
+                        {{ prefecture }}
+                    {% endfor %}
                     <div>
-                        名前：{{ list.username }}
+                        {{ list.date }}
                     </div>
-                    <div>
-                        {{ list.number }}
-                    </div>
-                </div><!--col-8-->
+                </div>
 
-                <div class="col-8">
-                    <div>
-                        {{ list.game }}
-                    </div>
-                </div><!--col-8-->
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div>
+                                名前：{{ list.username }}
+                            </div>
+                            <div>
+                                {{ list.number }}
+                            </div>
+                        </div><!--col-8-->
 
-                <div class="col-8">
-                    <div>
-                        {{ list.place }}
-                    </div>
-                </div><!--col-8-->
-            </div><!--rightcolrow-->
+                        <div class="col-lg-8">
+                            <div>
+                                {{ list.game }}
+                            </div>
+                        </div><!--col-8-->
+
+                        <div class="col-lg-8">
+                            <div>
+                                {{ list.place }}
+                            </div>
+                        </div><!--col-8-->
+                    </div><!--rightcolrow-->
+                </div><!--rightcol-->
 
 
-        </div><!--overall row-->
+            </div><!--overall row-->
         </a><!--card-->
         </div><!--col-12 col-lg-6-->
 
@@ -63,9 +57,6 @@
    </div><!--mainrow-->
 </div><!--list_container-->
 
-
-    </div>
-</div>
     <div class="container">
 
         
