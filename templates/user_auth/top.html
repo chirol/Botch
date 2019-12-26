@@ -25,31 +25,33 @@
                 {% for prefecture in list.area.all %}
                     {{ prefecture }}
                 {% endfor %}
+                <div>
+                    {{ list.date }}
+                </div>
             </div>
-            <div>
-                {{ list.date }}
+
+            <div class="row">
+                <div class="col-8">
+                    <div>
+                        名前：{{ list.username }}
+                    </div>
+                    <div>
+                        {{ list.number }}
+                    </div>
+                </div><!--col-8-->
+
+                <div class="col-8">
+                    <div>
+                        {{ list.game }}
+                    </div>
+                </div><!--col-8-->
+
+                <div class="col-8">
+                    <div>
+                        {{ list.place }}
+                    </div>
+                </div><!--col-8-->
             </div>
-
-            <div class="col-8">
-                <div>
-                    名前：{{ list.username }}
-                </div>
-                <div>
-                    {{ list.number }}
-                </div>
-            </div><!--col-8-->
-
-            <div class="col-8">
-                <div>
-                    {{ list.game }}
-                </div>
-            </div><!--col-8-->
-
-            <div class="col-8">
-                <div>
-                    {{ list.place }}
-                </div>
-            </div><!--col-8-->
 
 
 
