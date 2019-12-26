@@ -16,44 +16,49 @@
 
 
 <div class="container">
-<div class="row">
+<div class="row"><!--mainrow-->
  {% for list in object_list %}   
         <div class="col-12 col-lg-6">
         <a href="{% url 'user_auth:detail' list.pk %}" class="card">
-    
-        <div>
-            名前：{{ list.username }}
-        </div>
+        <div class="row">
+            <div class="col-4">
+                {% for prefecture in list.area.all %}
+                    {{ prefecture }}
+                {% endfor %}
+            </div>
+            <div>
+                {{ list.date }}
+            </div>
 
-        <div>
-            {{ list.game }}
-        </div>
+            <div class="col-8">
+                <div>
+                    名前：{{ list.username }}
+                </div>
+                <div>
+                    {{ list.number }}
+                </div>
+            </div><!--col-8-->
 
-        <div>
-            {% for prefecture in list.area.all %}
-                {{ prefecture }}
-            {% endfor %}
-        </div>
+            <div class="col-8">
+                <div>
+                    {{ list.game }}
+                </div>
+            </div><!--col-8-->
 
-        <div>
-            {{ list.place }}
-        </div>
+            <div class="col-8">
+                <div>
+                    {{ list.place }}
+                </div>
+            </div><!--col-8-->
 
-        <div>
-            {{ list.date }}
-        </div>
 
-        <div>
-            {{ list.number }}
-        </div>
-        
-        <div>
-            {{ list.comment }}
-        </div>
+
+            
+        </div><!--col-12 col-lg-6-->
         </a><!--card-->
-    </div><!--col-->
+    </div><!--cardcol-->
    {% endfor %} 
-   </div><!--row-->
+   </div><!--mainrow-->
 </div><!--list_container-->
 
 
