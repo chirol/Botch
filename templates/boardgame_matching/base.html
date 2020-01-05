@@ -25,15 +25,12 @@
                 </ul>
                 <ul class="navbar-nav">
                     {% if user.id == None %}
-                        <li class="navbar-item">
-                            <span class="nav-user">ようこそ dev_user</span>
-
-                            
+                        <li class="navbar-item">   
                             <a href={% url 'social:begin' 'twitter' %} class="btn btn-secondary">ログイン</a>
                         </li>
                     {% else %}
                         <li class="navbar-item">
-                            {{user}}
+                            <span class="nav-user">{{user}}</span>
                             <a href="{% url 'user_auth:logout' %}" class="btn login_out_button">ログアウト</button></a>
                         </li>
                     {% endif %}
