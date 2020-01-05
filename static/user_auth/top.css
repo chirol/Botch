@@ -1,0 +1,13 @@
+body{
+    color: #454545;
+    background-color: #ebebeb;
+}
+
+.jumbotron{
+    background: white url("images/top1.png") no-repeat;
+    background-size: cover;
+}
+
+.list-card{
+    position: relative;
+}

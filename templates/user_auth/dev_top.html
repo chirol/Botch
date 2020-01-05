@@ -1,148 +1,309 @@
 {% extends 'boardgame_matching/base.html' %}
 {% block title %}BBGMへようこそ{% endblock %}
 {% block content %}
+{% load static %} 
 
+
+<link rel="stylesheet" type="text/css" href="{% static "user_auth/top.css" %}">
+
+    <div class="jumbotron jumbotron-fluid"><!--topimage-->
+        <div class="container">
+            <h1 class="display-4">BBGMへようこそ</h1>
+    <p class="lead">BBGM(ぼっちボードゲームマッチング)は、お一人様専用のボードゲームマッチングサービスです</p>
+        </div>
+    </div><!--topimage-->
 
 <div class="container">
-<div class="row">
- 
-        <div class="col-12 col-lg-6">
-        <div class="card">
-    
-        <div>
-            名前: takadatakaka
-        </div>
+    <div class="row"><!--mainrow-->
+           
+        <div class="col-6 col-lg-4">
+        <a class="card list-card">
+            
+            <p class="prefecture">東京都</p>
+            <img class="card-img-top"src="{% static "user_auth/images/cardbody1.png" %}" alt="カード画像">
+        <div class="card-body list-card-body">
+            <div class="row card-game">
+                <div class="col-12">アグリコラ</div>
+                <div class="col-12 list-info">GAME</div>
+            </div>
+            <div class="row">
+                <div class="col-6 list-date">
+                    <div class="row">
+                        <p class="list-data">2019.9.1</p>
+                    </div>
+                    <div class="row">
+                        <p class="list-info">DATE</p>
+                    </div>
+                </div>
 
-        <div>
-            やりたいゲーム: 世界一面白いボードゲームアグリコラ
+                <div class="col-6">
+                    <div class="row">
+                        <p class="list-data">1/5</p>
+                    </div>
+                    <div class="row list-info">
+                        <p class="list-info">NUMBER</p>
+                    </div>
+                </div>
+            </div>
         </div>
+        </a><!--card-->
+        </div><!--col-12 col-lg-4-->           
 
-        <div>
-            募集地地区: 東京都　神奈川県
-        </div>
+<!--mainrow-->
 
-        <div>
-            開催場所（カフェなど）: いつもの場所
-        </div>
+<!--mainrow-->
+<div class="col-6 col-lg-4">
+        <a class="card list-card">
+            
+            <p class="prefecture">東京都</p>
+            <img class="card-img-top"src="{% static "user_auth/images/cardbody1.png" %}" alt="カード画像">
+        <div class="card-body list-card-body">
+            <div class="row card-game">
+                <div class="col-12">アグリコラ</div>
+                <div class="col-12 list-info">GAME</div>
+            </div>
+            <div class="row">
+                <div class="col-6 list-date">
+                    <div class="row">
+                        <p class="list-data">2019.9.1</p>
+                    </div>
+                    <div class="row">
+                        <p class="list-info">DATE</p>
+                    </div>
+                </div>
 
-        <div>
-            予定日: 2020/3/21
+                <div class="col-6">
+                    <div class="row">
+                        <p class="list-data">1/5</p>
+                    </div>
+                    <div class="row list-info">
+                        <p class="list-info">NUMBER</p>
+                    </div>
+                </div>
+            </div>
         </div>
+        </a><!--card-->
+        </div><!--col-12 col-lg-4-->           
 
-        <div>
-            募集人数: 5人
-        </div>
-        
-        <div>
-            世界一面白いボードゲームアグリコラをやる。それ...
-        </div>
-        </div><!--card-->
-    </div><!--col-->
+<!--mainrow-->
 
-    <div class="col-12 col-lg-6">
-        <div class="card">
-    
-        <div>
-            名前: takadatakaka
-        </div>
-        
-        <div>
-            やりたいゲーム: 世界一面白いボードゲームアグリコラ
-        </div>
+<!--mainrow-->
+           
+        <div class="col-6 col-lg-4">
+        <a class="card">
+            <div class="row">
+                <div class="col-lg-4">
+                    東京都
+                    <div>
+                        2019.9.3
+                    </div>
+                </div>
 
-        <div>
-            募集地地区: 東京都　神奈川県
-        </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div>
+                                名前：わさわさ
+                            </div>
+                            <div>
+                                1/5
+                            </div>
+                        </div><!--col-8-->
 
-        <div>
-            開催場所（カフェなど）: いつもの場所
-        </div>
+                        <div class="col-lg-8">
+                            <div>
+                                当然アグリコラ
+                            </div>
+                        </div><!--col-8-->
 
-        <div>
-            予定日: 2020/3/21
-        </div>
+                        <div class="col-lg-8">
+                            <div>
+                                jellyjellycafe
+                            </div>
+                        </div><!--col-8-->
+                    </div><!--rightcolrow-->
+                </div><!--rightcol-->
 
-        <div>
-            募集人数: 5人
-        </div>
-        
-        <div>
-            世界一面白いボードゲームアグリコラをやる。それ...
-        </div>
-        </div><!--card-->
-    </div><!--col-->
-    
-   </div><!--row-->
 
-   <div class="row">
- 
-        <div class="col-12 col-lg-6">
-        <a href="" class="card">
-    
-        <div>
-            名前: takadatakaka
-        </div>
+            </div><!--overall row-->
+        </a><!--card-->
+        </div><!--col-12 col-lg-6-->
 
-        <div>
-            やりたいゲーム: 世界一面白いボードゲームアグリコラ
-        </div>
+<!--mainrow-->
 
-        <div>
-            募集地地区: 東京都　神奈川県
-        </div>
+<!--mainrow-->
 
-        <div>
-            開催場所（カフェなど）: いつもの場所
-        </div>
+<!--mainrow-->
+<div class="col-6 col-lg-4">
+        <a class="card list-card">
+            
+            <p class="prefecture">東京都</p>
+            <img class="card-img-top"src="{% static "user_auth/images/cardbody1.png" %}" alt="カード画像">
+        <div class="card-body list-card-body">
+            <div class="row card-game">
+                <div class="col-12">アグリコラ</div>
+                <div class="col-12 list-info">GAME</div>
+            </div>
+            <div class="row">
+                <div class="col-6 list-date">
+                    <div class="row">
+                        <p class="list-data">2019.9.1</p>
+                    </div>
+                    <div class="row">
+                        <p class="list-info">DATE</p>
+                    </div>
+                </div>
 
-        <div>
-            予定日: 2020/3/21
+                <div class="col-6">
+                    <div class="row">
+                        <p class="list-data">1/5</p>
+                    </div>
+                    <div class="row list-info">
+                        <p class="list-info">NUMBER</p>
+                    </div>
+                </div>
+            </div>
         </div>
+        </a><!--card-->
+        </div><!--col-12 col-lg-4-->           
 
-        <div>
-            募集人数: 5人
-        </div>
-        
-        <div>
-            世界一面白いボードゲームアグリコラをやる。それ...
-        </div>
-        </div><!--card-->
-    </div><!--col-->
+<!--mainrow-->
 
-    <div class="col-12 col-lg-6">
-        <div class="card">
-    
-        <div>
-            名前: takadatakaka
-        </div>
-        
-        <div>
-            やりたいゲーム: 世界一面白いボードゲームアグリコラ
-        </div>
 
-        <div>
-            募集地地区: 東京都　神奈川県
-        </div>
+<!--mainrow-->
 
-        <div>
-            開催場所（カフェなど）: いつもの場所
-        </div>
+<!--mainrow-->
+           
+        <div class="col-12 col-lg-4">
+        <a class="card">
+            <div class="row">
+                <div class="col-lg-4">
+                    東京都
+                    <div>
+                        2019.9.3
+                    </div>
+                </div>
 
-        <div>
-            予定日: 2020/3/21
-        </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div>
+                                名前：わさわさ
+                            </div>
+                            <div>
+                                1/5
+                            </div>
+                        </div><!--col-8-->
 
-        <div>
-            募集人数: 5人
-        </div>
-        
-        <div>
-            世界一面白いボードゲームアグリコラをやる。それ...
-        </div>
-        </div><!--card-->
-    </div><!--col-->
-    
-   </div><!--row-->
+                        <div class="col-lg-8">
+                            <div>
+                                当然アグリコラ
+                            </div>
+                        </div><!--col-8-->
+
+                        <div class="col-lg-8">
+                            <div>
+                                jellyjellycafe
+                            </div>
+                        </div><!--col-8-->
+                    </div><!--rightcolrow-->
+                </div><!--rightcol-->
+
+
+            </div><!--overall row-->
+        </a><!--card-->
+        </div><!--col-12 col-lg-6-->
+
+<!--mainrow-->
+           
+        <div class="col-12 col-lg-4">
+        <a class="card">
+            <div class="row">
+                <div class="col-lg-4">
+                    東京都
+                    <div>
+                        2019.9.3
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div>
+                                名前：わさわさ
+                            </div>
+                            <div>
+                                1/5
+                            </div>
+                        </div><!--col-8-->
+
+                        <div class="col-lg-8">
+                            <div>
+                                当然アグリコラ
+                            </div>
+                        </div><!--col-8-->
+
+                        <div class="col-lg-8">
+                            <div>
+                                jellyjellycafe
+                            </div>
+                        </div><!--col-8-->
+                    </div><!--rightcolrow-->
+                </div><!--rightcol-->
+
+
+            </div><!--overall row-->
+        </a><!--card-->
+        </div><!--col-12 col-lg-6-->
+
+<!--mainrow-->
+
+<!--mainrow-->
+           
+        <div class="col-12 col-lg-4">
+        <a class="card">
+            <div class="row">
+                <div class="col-lg-4">
+                    東京都
+                    <div>
+                        2019.9.3
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div>
+                                名前：わさわさ
+                            </div>
+                            <div>
+                                1/5
+                            </div>
+                        </div><!--col-8-->
+
+                        <div class="col-lg-8">
+                            <div>
+                                当然アグリコラ
+                            </div>
+                        </div><!--col-8-->
+
+                        <div class="col-lg-8">
+                            <div>
+                                jellyjellycafe
+                            </div>
+                        </div><!--col-8-->
+                    </div><!--rightcolrow-->
+                </div><!--rightcol-->
+
+
+            </div><!--overall row-->
+        </a><!--card-->
+        </div><!--col-12 col-lg-6-->
+
+</div><!--mainrow-->
+
+
 </div><!--list_container-->
 
+  
 {% endblock %}

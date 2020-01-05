@@ -1,0 +1,41 @@
+body{
+    font-size: 16px;
+    color: #454545;
+    background-color: #ebebeb;
+}
+p{
+    margin: auto;
+}
+
+.nav-user{
+    color: white;
+}
+
+.jumbotron{
+    background: white url("images/top1.png") no-repeat;
+    background-size: cover;
+}
+
+.list-card{
+    position: relative;
+}
+
+.card-game{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.list-date{
+    border-right: 1px solid #e3e3e3;
+}
+
+.list-data{
+    font-size: 12px;
+}
+
+.list-info{
+    font-size: 10px;
+    font-weight: bold;
+    color: #b8b8b8;
+}

@@ -1,6 +1,8 @@
 {% load static %}
+
 <html>
     <head>
+        
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
             <!-- bootstrap4 -->
@@ -15,25 +17,27 @@
     <body>
         <nav class ="navbar navbar-dark bg-dark base-navbar">
             <span class ="navbar-brand">
-            <a class='navbar-brand' href={% url 'user_auth:top_r' %}>BBGM</a>
+                <a class='navbar-brand' href={% url 'user_auth:top_r' %}>BBGM</a>
             </span>
-        
 
-        <!--        {% if user.access_token.screen_name %}
-        {{ user.access_token.screen_name }}
-        <a href="{% url 'user_auth:logout' %}" >ログアウト</button></a>
-        {% else %}
-        <a href={% url 'social:begin' 'twitter' %}>ログイン</a>
-        {% endif %}-->
+                <ul class="navbar-nav mr-auto">
 
-            {% if user.id == None %}
-                <a href={% url 'social:begin' 'twitter' %}>ログイン</a>
-            {% else %}
-                {{user}}
-                {{ user.id }}
-                <a href="{% url 'user_auth:logout' %}" >ログアウト</button></a>
-            {% endif %}
+                </ul>
+                <ul class="navbar-nav">
+                    {% if user.id == None %}
+                        <li class="navbar-item">
+                            <span class="nav-user">ようこそ dev_user</span>
 
+                            
+                            <a href={% url 'social:begin' 'twitter' %} class="btn btn-secondary">ログイン</a>
+                        </li>
+                    {% else %}
+                        <li class="navbar-item">
+                            {{user}}
+                            <a href="{% url 'user_auth:logout' %}" class="btn login_out_button">ログアウト</button></a>
+                        </li>
+                    {% endif %}
+                </ul>
 
 
         </nav> <!-- navbar -->

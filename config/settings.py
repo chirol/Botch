@@ -81,17 +81,15 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-
+"""
+#heroku config
 db_from_env = dj_database_url.config()
 
 DATABASES = {
     'default': dj_database_url.config()
 }
+"""
 
-"""
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
-"""
-"""
 # default
 DATABASES = {
     'default': {
@@ -100,7 +98,7 @@ DATABASES = {
     }
 }
 
-"""
+
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -166,6 +164,8 @@ SOCIAL_AUTH_TWITTER_ACCESS_TOKEN_SECRET = 'NaJOOZL3VMz1gkNjnSq8NCoRvCAUIEfAUQLPw
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'user_auth:top_r' # リダイレクトURL
 LOGOUT_REDIRECT_URL = 'user_auth:top_r'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 
 try:

@@ -1,65 +1,54 @@
 {% extends 'boardgame_matching/base.html' %}
-
-
 {% block title %}BBGMへようこそ{% endblock %}
-
 {% block content %}
 
-
+<link rel="stylesheet" type="text/css" href="{% static "user_auth/top.css" %}">
+<div class="jumbotron jumbotron-fluid"><!--topimage-->
+        <div class="container">
+            <h1 class="display-4">BBGMへようこそ</h1>
+            <p class="lead">BBGM(ぼっちボードゲームマッチング)は、お一人様専用のボードゲームマッチングサービスです</p>
+        </div>
+</div><!--topimage-->
 
 <div class="container">
     <div class="row"><!--mainrow-->
         {% for list in object_list %}   
-        <div class="col-12 col-lg-6">
-        <a href="{% url 'user_auth:detail' list.pk %}" class="card">
-            <div class="row">
-                <div class="col-lg-4">
-                    {% for prefecture in list.area.all %}
-                        {{ prefecture }}
+            <div class="col-6 col-lg-4">
+                <a class="card list-card"> 
+                    {% for prefecture in list.area.all %}  
+                        <p class="prefecture">{{ prefecture }}</p>
                     {% endfor %}
-                    <div>
-                        {{ list.date }}
+                <img class="card-img-top"src="{% static "user_auth/images/cardbody1.png" %}" alt="カード画像">
+                    <div class="card-body list-card-body">
+                        <div class="row card-game">
+                            <div class="col-12">{{ list.game }}</div>
+                            <div class="col-12 list-info">GAME</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 list-date">
+                                <div class="row">
+                                    <p class="list-data">{{ list.date }}</p>
+                                </div>
+                                <div class="row">
+                                    <p class="list-info">DATE</p>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="row">
+                                    <p class="list-data">1/{{ list.number }}</p>
+                                </div>
+                                <div class="row list-info">
+                                    <p class="list-info">NUMBER</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-lg-8">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div>
-                                名前：{{ list.username }}
-                            </div>
-                            <div>
-                                {{ list.number }}
-                            </div>
-                        </div><!--col-8-->
-
-                        <div class="col-lg-8">
-                            <div>
-                                {{ list.game }}
-                            </div>
-                        </div><!--col-8-->
-
-                        <div class="col-lg-8">
-                            <div>
-                                {{ list.place }}
-                            </div>
-                        </div><!--col-8-->
-                    </div><!--rightcolrow-->
-                </div><!--rightcol-->
-
-
-            </div><!--overall row-->
-        </a><!--card-->
-        </div><!--col-12 col-lg-6-->
-
-   {% endfor %} 
+                </a><!--card-->
+            </div><!--col-12 col-lg-4-->     
+        {% endfor %} 
    </div><!--mainrow-->
 </div><!--list_container-->
 
-    <div class="container">
-
-        
-
-    </div>
 
 {% endblock %}
