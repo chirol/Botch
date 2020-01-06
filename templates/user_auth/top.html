@@ -15,7 +15,7 @@
     <div class="row"><!--mainrow-->
         {% for list in object_list %}   
             <div class="col-6 col-lg-4">
-                <a href=""class="card list-card"> 
+                <a href="{% url "user_auth:detail" list.pk %}"class="card list-card"> 
                     {% for prefecture in list.area.all %}  
                         <span class="prefecture">{{ prefecture }}</span>
                     {% endfor %}
