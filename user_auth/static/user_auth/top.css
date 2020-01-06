@@ -20,6 +20,10 @@ p{
     position: relative;
     text-decoration: none;
 }
+.list-card:hover{
+    font-color: #454545;
+    text-decoration: none;
+}
 
 .card-game{
     text-align: center;
