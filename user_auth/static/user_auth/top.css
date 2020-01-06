@@ -20,10 +20,15 @@ p{
     color: #454545;
     position: relative;
     text-decoration: none;
+    z-index: 0;
 }
 .list-card:hover{
     color: #454545;
     text-decoration: none;
+}
+.prefecture{
+    position: absolute;
+    z-index: 1;
 }
 
 .card-game{
