@@ -15,9 +15,9 @@
     <div class="row"><!--mainrow-->
         {% for list in object_list %}   
             <div class="col-6 col-lg-4">
-                <a class="card list-card"> 
+                <a href=""class="card list-card"> 
                     {% for prefecture in list.area.all %}  
-                        <p class="prefecture">{{ prefecture }}</p>
+                        <span class="prefecture">{{ prefecture }}</span>
                     {% endfor %}
                 <img class="card-img-top"src="{% static "user_auth/images/cardbody1.png" %}" alt="カード画像">
                     <div class="card-body list-card-body">
