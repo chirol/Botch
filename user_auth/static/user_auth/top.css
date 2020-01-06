@@ -17,11 +17,12 @@ p{
 }
 
 .list-card{
+    color: #454545;
     position: relative;
     text-decoration: none;
 }
 .list-card:hover{
-    font-color: #454545;
+    color: #454545;
     text-decoration: none;
 }
 
