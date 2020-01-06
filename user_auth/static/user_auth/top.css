@@ -18,6 +18,7 @@ p{
 
 .list-card{
     position: relative;
+    text-decoration: none;
 }
 
 .card-game{
