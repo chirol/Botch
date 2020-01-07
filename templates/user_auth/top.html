@@ -5,9 +5,10 @@
 
 <link rel="stylesheet" type="text/css" href="{% static "user_auth/top.css" %}">
 <div class="jumbotron jumbotron-fluid"><!--topimage-->
-        <div class="container">
+        <div class="container container_jumbotron">
             <h1 class="display-4">BBGMへようこそ</h1>
             <p class="lead">BBGM(ぼっちボードゲームマッチング)は、お一人様専用のボードゲームマッチングサービスです</p>
+            <a class="btn btn-recruitment" href="{% url "user_auth:recruitment" %}">募集</a>
         </div>
 </div><!--topimage-->
 

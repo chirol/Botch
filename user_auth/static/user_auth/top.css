@@ -12,23 +12,31 @@ p{
 }
 
 .jumbotron{
+    color: white;
+    font-weight: bold;
     background: white url("images/top1.png") no-repeat;
     background-size: cover;
+}
+
+.btn-recruitment{
+    color: white;
+    background-color: #FF9F6B;
 }
 
 .list-card{
     color: #454545;
     position: relative;
     text-decoration: none;
-    z-index: 0;
 }
 .list-card:hover{
     color: #454545;
     text-decoration: none;
 }
 .prefecture{
+    margin: 0 10 10 10;
+    padding: 10 10 5 10;
     position: absolute;
-    z-index: 1;
+    background-color: #E861BF;
 }
 
 .card-game{
