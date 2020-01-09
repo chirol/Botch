@@ -8,7 +8,9 @@
         <div class="container container_jumbotron">
             <h1 class="display-4">BBGMへようこそ</h1>
             <p class="lead">BBGM(ぼっちボードゲームマッチング)は、お一人様専用のボードゲームマッチングサービスです</p>
-            <a class="btn btn-recruitment" href="{% url "user_auth:recruitment" %}">募集</a>
+            {% if user.id == None %}
+                <a class="btn btn-recruitment" href="{% url "user_auth:recruitment" %}">募集</a>
+            {% endif %}
         </div>
 </div><!--topimage-->
 
