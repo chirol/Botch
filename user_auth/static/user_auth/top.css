@@ -22,6 +22,10 @@ p{
     color: white;
     background-color: #FF9F6B;
 }
+.btn-recruitment:hover{
+    color: white;
+    text-decoration: none;
+}
 
 .list-card{
     color: #454545;
