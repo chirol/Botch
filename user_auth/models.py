@@ -27,7 +27,10 @@ class Participants(models.Model):
 
 
 class Recruitment(models.Model):
-    # 募集に必要な情報。
+    """
+    募集時に入力する項目。
+    
+    """
     username = models.CharField(
         verbose_name='あなたの名前',
         max_length=100,
