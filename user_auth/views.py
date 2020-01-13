@@ -19,6 +19,9 @@ def top_page(request):
 
 
 class RecruitCreateView(CreateView):
+    """
+    募集フォーム用view
+    """
     model = Recruitment
     form_class = RecruitmentForm
     template_name = "user_auth/create_form.html"

@@ -23,10 +23,10 @@ urlpatterns = [
     path('', include('user_auth.urls')),
     path('admin/', admin.site.urls),
     path('user/', include('social_django.urls', namespace='social')),
-    path('user/', include('user_auth.urls')),
     
     path('accounts/', include('user_auth.urls')),
 ]
 
+#path('user/', include('user_auth.urls')),
 #urlpatterns += staticfiles_urlpatterns()
 #urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
