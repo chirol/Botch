@@ -27,7 +27,7 @@ SECRET_KEY = '*)e!syd_!b18lku=z8oo_ig^asn7c($%qjv$d_-5!%++t3_9d0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "herokuapp.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "botchboardgamer.herokuapp.com"]
 
 
 # Application definition
