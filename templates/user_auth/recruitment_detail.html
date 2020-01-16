@@ -7,36 +7,40 @@
                   'date', 'comment')-->
 <div class='container recruitment-container'>
     <div>
-        <label class="recruitment-label">名前</label>
-        <p>
-        {{ recruitment.username }}
-        </p>
+        <label class="form-label">お名前</label>
+        <p>{{ recruitment.username }}</p>
     </div>
 
     <div>
-        {{ recruitment.game }}
+        <label class="form-label">遊びたいボードゲームなど</label>
+        <p>{{ recruitment.game }}</p>
     </div>
 
     <div>
+        <label class="form-label">集まる場所</label>
         {% for prefecture in recruitment.area.all %}
             {{ prefecture }}
         {% endfor %}
     </div>
 
     <div>
-        {{ recruitment.place }}
+        <label class="form-label">集まるカフェや場所</label>
+        <p>{{ recruitment.place }}</p>
     </div>
 
     <div>
-        {{ recruitment.date }}
+        <label class="form-label">集まるカフェや場所</label>
+        <p>{{ recruitment.date }}</p>
     </div>
 
     <div>
-        {{ recruitment.number }}
+        <label class="form-label">募集人数</label>
+        <p>{{ recruitment.number }}</p>
     </div>
     
     <div>
-        {{ recruitment.comment }}
+        <label class="form-label">コメント</label>
+        <p>{{ recruitment.comment }}</p>
     </div>
     <div>
         <a href="{% url 'user_auth:update' recruitment.pk %}" class="btn">修正する！</a>
