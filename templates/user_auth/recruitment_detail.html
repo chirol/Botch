@@ -18,9 +18,11 @@
 
     <div>
         <label class="form-label">集まる場所</label>
+        <p>
         {% for prefecture in recruitment.area.all %}
             {{ prefecture }}
         {% endfor %}
+        </p>
     </div>
 
     <div>
