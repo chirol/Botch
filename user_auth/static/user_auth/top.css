@@ -11,6 +11,14 @@ p{
     color: white;
 }
 
+.nav-btn{
+    background-color: #787878;
+    color: white;
+}
+
+.nav-btn:hover{
+    color: white;
+}
 .jumbotron{
     color: white;
     font-weight: bold;

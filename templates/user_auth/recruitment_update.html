@@ -7,25 +7,25 @@
     <div class="container">
     
         <div class="form-group">
-            <label>お名前：</label>
-            {{ form.username }}
+            <label class="form-label">お名前</label>
+            <p>{{ form.username }}</p>
         </div>
-        <div>
+        <div >
             {{ form.userid }}<!--隠しフィールド-->
         </div>
-        <div>
-            <label>遊びたいゲームやジャンル</label>
-            {{ form.game }}
+        <div class="form-group">
+            <label class="form-label">遊びたいゲームやジャンル</label>
+            <p>{{ form.game }}</p>
         </div>
-        <div>
-            <label>遊びたい地域</label>
-            {{ form.area }}
+        <div class="form-group">
+            <label class="form-label">遊びたい地域</label>
+            <p>{{ form.area }}</p>
         </div>
-        <div>
-            <label>カフェや場所</label>
-            {{ form.place }}
+        <div class="form-group">
+            <label class="form-label">カフェや場所</label>
+            <p>{{ form.place }}</p>
         </div>
-        <div>
+        <div class="form-group">
             <label>希望日時</label>
             {{ form.date }}
         </div>

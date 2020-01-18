@@ -26,7 +26,7 @@
                 <ul class="navbar-nav">
                     {% if user.id == None %}
                         <li class="navbar-item">   
-                            <a href={% url 'social:begin' 'twitter' %} class="btn btn-secondary">ログイン</a>
+                            <a href={% url 'social:begin' 'twitter' %} class="btn nav-btn">ログイン</a>
                         </li>
                     {% else %}
                         <li class="navbar-item">
