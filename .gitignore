@@ -1,4 +1,4 @@
-.botchenv/
+botchenv/
 __pycache__
 staticfiles
 local_settings.py
