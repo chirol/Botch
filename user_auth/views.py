@@ -59,11 +59,14 @@ class RecruitmentDatailView(DetailView):
     model = Recruitment
     template_name = "user_auth/recruitment_detail.html"
 
-"""
+    def join(self):
+        pass
+
+    """
     def user_auth(request):
         self.user = UserSocialAuth.objects.get(user_id=self.request.user.id)
         return render(request, 'user_auth/create_form.html', {'user': self.user})
-"""
+    """
 
 class RecruitmentUpdateView(UpdateView):
     """
@@ -86,12 +89,15 @@ class RecruitmentListView(ListView):
     model = Recruitment
     template_name = "user_auth/top.html"
 
+    def number(self):
+        number = Recruitment.participant
 
 
 """
 class RecruitmentDeleteView(DeleteView):
     model = Recruitment
     # 削除はまずはなしの方針で、要望があれば追加
+    # 
 """
 
 
