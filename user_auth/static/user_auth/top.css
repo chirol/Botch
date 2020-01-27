@@ -1,9 +1,12 @@
 body{
-    background-color: #c04c4c;
     font-size: 16px;
     color: #454545;
     
 }
+.body-conf{
+    background-color: #d1d1d1;
+}
+
 p{
     margin: auto;
 }
