@@ -9,38 +9,54 @@
 <form method="post">
 {% csrf_token %}
     <div class="container">
-    
-        <div class="form-group">
-            <label class="form-label">お名前：</label>
-            {{ form.username }}
+        <div class="row">
+            <div class="form-group">
+                <label class="form-label">お名前：</label>
+                {{ form.username }}
+            </div>
         </div>
-        <div class="form-group">
-            {{ form.userid }}<!--隠しフィールド-->
+        <div class="row">
+            <div class="form-group">
+                {{ form.userid }}<!--隠しフィールド-->
+            </div>
         </div>
-        <div class="form-group">
-            <label class="form-label">遊びたいゲームやジャンル</label>
-            {{ form.game }}
+        <div class="row">
+            <div class="form-group">
+                <label class="form-label">遊びたいゲームやジャンル</label>
+                {{ form.game }}
+            </div>
         </div>
-        <div class="form-group">
-            <label class="form-label">遊びたい地域</label>
-            {{ form.area }}
+        <div class="row">
+            <div class="form-group">
+                <label class="form-label">遊びたい地域</label>
+                {{ form.area }}
+            </div>
         </div>
-        <div class="form-group">
-            <label class="form-label">カフェや場所</label>
-            {{ form.place }}
+        <div class="row">
+            <div class="form-group">
+                <label class="form-label">カフェや場所</label>
+                {{ form.place }}
+            </div>
         </div>
-        <div class="form-group">
-            <label class="form-label">希望日時</label>
-            {{ form.date }}
+        <div class="row">
+            <div class="form-group">
+                <label class="form-label">希望日時</label>
+                {{ form.date }}
+            </div>
         </div>
-        <div class="form-group">
-            <label class="form-label">参加人数</label>
-            {{ form.number }}
-        <div class="form-group">
-            <label class="form-label">コメント</label>
-            {{ form.comment }}
+        <div class="row">
+            <div class="form-group">
+                <label class="form-label">参加人数</label>
+                {{ form.number }}
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary">募集をかける！</button>
+        <div class="row">
+            <div class="form-group">
+                <label class="form-label">コメント</label>
+                {{ form.comment }}
+            </div>
+        </div>
+            <button type="submit" class="btn btn-primary">募集をかける！</button>
     </div><!--container-->
     
 </form>
